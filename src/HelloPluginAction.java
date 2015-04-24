@@ -8,6 +8,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 
 import java.io.BufferedReader;
@@ -23,6 +24,18 @@ public class HelloPluginAction extends AnAction {
     public void actionPerformed(AnActionEvent e) {
         final Project project = e.getProject();
         if (project == null) {
+            return;
+        }
+        String startIndexStr = Messages.showInputDialog(project, "Input start number.", "InputSequence", null);
+        if (startIndexStr != null && startIndexStr.length() == 0) {
+//            Messages.showErrorDialog(project, "Input number!", "Invalid Input");
+            return;
+        }
+        int startIndex = 0;
+        try {
+            startIndex = Integer.parseInt(startIndexStr);
+        } catch (NumberFormatException e1) {
+//            Messages.showErrorDialog(project, "Input number!", "Invalid Input");
             return;
         }
         Editor editor = FileEditorManager.getInstance(project).getSelectedTextEditor();
@@ -54,7 +67,7 @@ public class HelloPluginAction extends AnAction {
             String currentLine;
             StringBuilder sb = new StringBuilder();
             int counter = 0;
-            int editNum = 0;
+            int editNum = startIndex;
             while ((currentLine = br.readLine()) != null) {
                 char[] chars = currentLine.toCharArray();
                 // 文字列を検索し、挿入位置を特定しその前に番号をいれていく
