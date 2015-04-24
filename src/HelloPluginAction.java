@@ -38,6 +38,9 @@ public class HelloPluginAction extends AnAction {
 //            Messages.showErrorDialog(project, "Input number!", "Invalid Input");
             return;
         }
+        // TODO: zero padding
+        int digit = startIndexStr.length();
+
         Editor editor = FileEditorManager.getInstance(project).getSelectedTextEditor();
         if (editor == null) {
             return;
@@ -73,6 +76,13 @@ public class HelloPluginAction extends AnAction {
                 // 文字列を検索し、挿入位置を特定しその前に番号をいれていく
                 for(char character : chars){
                     if(map.containsKey(Integer.toString(counter))){
+                        // zero padding
+                        if(Integer.toString(editNum).length() < digit){
+                            int paddingCnt = digit - Integer.toString(editNum).length();
+                            for(int i = 0; i < paddingCnt; i++){
+                                sb.append(0);
+                            }
+                        }
                         sb.append(editNum);
                         sb.append(character);
                         editNum++;
@@ -82,6 +92,13 @@ public class HelloPluginAction extends AnAction {
                     counter++;
                 }
                 if(map.containsKey(Integer.toString(counter))){
+                    // zero padding
+                    if(Integer.toString(editNum).length() < digit){
+                        int paddingCnt = digit - Integer.toString(editNum).length();
+                        for(int i = 0; i < paddingCnt; i++){
+                            sb.append(0);
+                        }
+                    }
                     sb.append(editNum);
                     editNum++;
                 }
