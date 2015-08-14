@@ -1,5 +1,5 @@
 <idea-plugin version="2">
-  <id>com.yourcompany.unique.plugin.id</id>
+  <id>info.isann.idea.plugin.inputsequence</id>
   <name>InputSequence</name>
   <version>1.0</version>
   <vendor email="support@yourcompany.com" url="http://zono.xyz/">YourCompany</vendor>
