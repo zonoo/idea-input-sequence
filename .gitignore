@@ -2,3 +2,5 @@
 *.iml
 out
 *.jar
+.DS_Store
+!dist/private_java_idea_input_sequence_plugin.jar
