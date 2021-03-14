@@ -1,3 +1,6 @@
+# Warning
+Active development has been moved to [isann/idea-input-sequence-kt](https://github.com/isann/idea-input-sequence-kt).
+
 # これは？
 IntelliJ IDEA とかの IDE 製品でカレントキャレット位置に連番を入力するプラグインをつくってみました。
 
