@@ -1,7 +1,7 @@
 # 注意
 このブランチは [isann/idea-input-sequence-kt](https://github.com/isann/idea-input-sequence-kt) に移動しました。
 
-プラグインを [plugins.jetbrains.com](https://plugins.jetbrains.com/plugin/16304-inputsequence) で公開しています。
+InputSequence プラグインを [plugins.jetbrains.com](https://plugins.jetbrains.com/plugin/16304-inputsequence) で公開しています。
 
 もし InputSequence プラグインの機能では十分ではないとき、[String Manipulation](https://plugins.jetbrains.com/plugin/2162-string-manipulation) の利用を検討してください。
 InputSequence プラグインは "1" や "001" などを入力して連番を作成するシンプルな機能です。
